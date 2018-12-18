@@ -27,10 +27,11 @@ repositories {
 dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     compile("io.ktor:ktor-server-netty:$ktor_version")
-    compile("ch.qos.logback:logback-classic:$logback_version")
+    compile("io.ktor:ktor-network-tls:$ktor_version")
     compile("io.ktor:ktor-server-core:$ktor_version")
     compile("io.ktor:ktor-html-builder:$ktor_version")
     compile("org.jetbrains:kotlin-css-jvm:1.0.0-pre.31-kotlin-1.2.41")
+    compile("ch.qos.logback:logback-classic:$logback_version")
     testCompile("io.ktor:ktor-server-tests:$ktor_version")
 }
 
