@@ -20,8 +20,10 @@ import kotlinx.css.CSSBuilder
 import kotlinx.css.Color
 import kotlinx.css.LinearDimension
 import kotlinx.css.body
+import kotlinx.css.em
 import kotlinx.css.margin
 import kotlinx.css.padding
+import kotlinx.css.properties.LineHeight
 import kotlinx.css.px
 import kotlinx.html.head
 import kotlinx.html.link
@@ -50,7 +52,7 @@ fun Application.module() {
                     link(rel = "stylesheet", href = "/style.css", type = "text/css")
                 }
                 insert(TzitzaMainTemplate()) {
-                    welcomeMessage { +"=OwO= What's this?" }
+                    title { +"TZITZA World" }
                 }
             }
         }
@@ -61,7 +63,7 @@ fun Application.module() {
                     maxWidth = 650.px
                     margin(40.px, LinearDimension.auto)
                     padding(0.px, 10.px)
-                    fontSize = 18.px / 1.5
+                    fontSize = LinearDimension("18px / 1.5")
                     fontFamily = """
                         -apple-system, BlinkMacSystemFont,
                         'avenir next', avenir,
@@ -78,11 +80,11 @@ fun Application.module() {
                         """.trimIndent()
                     color = Color("#444")
                 }
+
+                "h1, h2, h3" {
+                    lineHeight = LineHeight("1.2")
+                }
             }
         }
     }
-}
-
-suspend inline fun ApplicationCall.respondCss(builder: CSSBuilder.() -> Unit) {
-    this.respondText(CSSBuilder().apply(builder).toString(), ContentType.Text.CSS)
 }
