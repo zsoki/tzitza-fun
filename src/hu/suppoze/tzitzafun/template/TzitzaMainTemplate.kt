@@ -4,7 +4,7 @@ import hu.suppoze.tzitzafun.styleCss
 import io.ktor.html.Placeholder
 import io.ktor.html.Template
 import io.ktor.html.insert
-import kotlinx.css.Display
+import kotlinx.css.Float
 import kotlinx.css.VerticalAlign
 import kotlinx.css.pct
 import kotlinx.css.px
@@ -29,13 +29,13 @@ class TzitzaMainTemplate : Template<HTML> {
             }
             div("content-parent") {
                 styleCss {
-                    maxWidth = 650.px
+                    maxWidth = 800.px
                 }
 
                 div("sidebar-menu") {
                     styleCss {
-                        display = Display.inlineBlock
-                        maxWidth = 30.pct
+                        float = Float.left
+                        width = 20.pct
                         verticalAlign = VerticalAlign.top
                     }
 
@@ -47,8 +47,8 @@ class TzitzaMainTemplate : Template<HTML> {
 
                 div("post-content") {
                     styleCss {
-                        display = Display.inlineBlock
-                        maxWidth = 70.pct
+                        float = Float.left
+                        width = 80.pct
                     }
                     h1 { +"Post title" }
                     p {

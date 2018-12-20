@@ -60,10 +60,11 @@ fun Application.module() {
         get("/style.css") {
             call.respondCss {
                 body {
-                    maxWidth = 650.px
+                    maxWidth = 800.px
                     margin(40.px, LinearDimension.auto)
                     padding(0.px, 10.px)
-                    fontSize = LinearDimension("18px / 1.5")
+                    fontSize = 18.px
+                    lineHeight = LineHeight("1.5")
                     fontFamily = """
                         -apple-system, BlinkMacSystemFont,
                         'avenir next', avenir,
